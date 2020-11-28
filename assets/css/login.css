@@ -20,3 +20,29 @@ body {
   height: 60px;
   background: url(/assets/images/login_title.png) no-repeat center;
 }
+.reg_box {
+  display: none;
+}
+/* 给表单里面的元素添加样式 */
+.layui-form {
+  padding: 0 30px;
+}
+.layui-form-item {
+  position: relative;
+}
+/* 字体图标的位置 */
+.layui-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.layui-input {
+  padding-left: 32px;
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+.links a {
+  font-size: 12px;
+}
