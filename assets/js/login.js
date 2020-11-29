@@ -25,7 +25,7 @@ $(function () {
     },
   });
   //所有的校验做好之后监听表单的提交事件
-  var layer = layui.layer;
+  var layer = layui.layer; //创建一个layer对象
   $("#reg_form").on("submit", function (e) {
     e.preventDefault();
     var user = $(".reg_box .username").val();
@@ -45,6 +45,27 @@ $(function () {
           console.log(res);
           $("#reg_form")[0].reset();
           $("#reg").click();
+        }
+      },
+    });
+  });
+  //登录的验证
+  $("#login_form").on("submit", function (e) {
+    e.preventDefault();
+    //获取表单里面的所有内容
+    var value = $("#login_form").serialize();
+    $.ajax({
+      url: "http://ajax.frontend.itheima.net/api/login",
+      method: "POST",
+      data: value,
+      success: function (res) {
+        if (res.status !== 0) {
+          layer.msg(res.message);
+        } else {
+          localStorage.setItem("token", res.token);
+          layer.msg("登陆成功！");
+          $("#login_form")[0].reset();
+          location.href = "index.html";
         }
       },
     });
