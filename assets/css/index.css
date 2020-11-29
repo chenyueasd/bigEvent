@@ -1,0 +1,10 @@
+.exit {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+}
+.center-per {
+  position: absolute;
+  top: 0;
+  left: -50px;
+}
