@@ -25,6 +25,7 @@ $(function () {
     },
   });
   //所有的校验做好之后监听表单的提交事件
+  var layer = layui.layer;
   $("#reg_form").on("submit", function (e) {
     e.preventDefault();
     var user = $(".reg_box .username").val();
@@ -37,11 +38,13 @@ $(function () {
         password: pwd,
       },
       success: function (res) {
-        console.log(res);
         if (res.status !== 0) {
-          return alert("注册失败！");
+          return console.log(res.message);
         } else {
+          layer.msg("注册成功，请登录！");
+          console.log(res);
           $("#reg_form")[0].reset();
+          $("#reg").click();
         }
       },
     });
