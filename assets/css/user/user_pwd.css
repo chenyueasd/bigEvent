@@ -1,0 +1,13 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f4f5;
+}
+#user-pwd {
+  margin: 15px;
+  background-color: #fff;
+}
+#user-pwd input {
+  width: 300px;
+}

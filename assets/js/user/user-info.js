@@ -45,7 +45,7 @@ $(function () {
           form.val("formUserInfo", res.data);
         }
       },
-      //   complete: function (res) {},
+      //   complete: function (res) {console.log(res.responseJSON);},
     });
   }
   //初始化(重置)个人信息
