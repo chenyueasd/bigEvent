@@ -25,7 +25,9 @@ $(function () {
       success: function (res) {
         console.log(res);
         console.log(res.data.nickname[0]);
-        $(".welcome").html("欢迎&nbsp;&nbsp;" + res.data.nickname);
+        $(".welcome").html(
+          "欢迎&nbsp;&nbsp;" + (res.data.nickname || res.data.username)
+        );
         if (res.status !== 0) {
           layer.msg("获取用户信息失败！");
         } else {
@@ -52,7 +54,7 @@ $(function () {
       $(".user-info").hide();
     } else {
       $(".layui-nav-img").hide();
-      $(".avatar").html(user.nickname[0]);
+      $(".avatar").html(user.nickname[0] || user.username[0]);
     }
   }
 });
