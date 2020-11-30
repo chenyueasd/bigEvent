@@ -19,6 +19,8 @@ $(function () {
           layer.msg("修改用户信息失败！");
         } else {
           layer.msg(res.message);
+          //通过window.parent去调用index的某些方法
+          window.parent.getUserInfo();
         }
       },
     });
