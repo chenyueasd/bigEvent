@@ -11,19 +11,20 @@
     <div class="layui-card" id="user-info">
       <div class="layui-card-header">修改用户消息</div>
       <div class="layui-card-body">
-        <form class="layui-form" action="">
+        <form class="layui-form form_reset" lay-filter="formUserInfo">
           <div class="layui-form-item">
             <label class="layui-form-label">登录名称</label>
             <div class="layui-input-block">
               <input
                 type="text"
-                name="title"
+                name="username"
                 required
                 lay-verify="required"
                 value="itheima"
                 autocomplete="off"
                 class="layui-input login_name"
                 readonly="true"
+                draggable="true"
               />
             </div>
           </div>
@@ -33,10 +34,10 @@
             <div class="layui-input-block">
               <input
                 type="text"
-                name="title"
+                name="nickname"
                 required
                 lay-verify="required"
-                placeholder="请输入标题"
+                placeholder="请输入用户昵称"
                 autocomplete="off"
                 class="layui-input"
               />
@@ -48,17 +49,52 @@
             <div class="layui-input-block">
               <input
                 type="text"
-                name="title"
-                required
+                name="email"
                 lay-verify="required"
-                placeholder="请输入标题"
+                placeholder="请输入用户邮箱"
                 autocomplete="off"
                 class="layui-input"
               />
             </div>
           </div>
+
+          <!-- 用户id -->
+          <div class="layui-form-item">
+            <input
+              type="hidden"
+              name="id"
+              required
+              lay-verify="required"
+              autocomplete="off"
+              class="layui-input ids"
+            />
+          </div>
+
+          <!-- 提交和重置按钮 -->
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button
+                class="layui-btn"
+                lay-submit
+                lay-filter="formDemo"
+                id="user_submit"
+              >
+                立即提交
+              </button>
+              <button
+                type="reset"
+                class="layui-btn layui-btn-primary"
+                id="userReset"
+              >
+                重置
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/user/user-info.js"></script>
   </body>
 </html>
