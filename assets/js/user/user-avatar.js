@@ -21,7 +21,6 @@ $(function () {
   //e.target.files获取照片相关信息
   $("#file").on("change", function (e) {
     var filelist = e.target.files;
-    console.log(filelist);
     //更换裁剪的图片
     //1.拿到用户选择的文件
     var file = e.target.files[0];
